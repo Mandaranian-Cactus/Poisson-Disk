@@ -1,0 +1,12 @@
+Start with a random point on the screen
+Append point into the process_list (Queue data type), sample_points, and grid
+while process_list not empty:
+    point = process_list.pop()
+    for i in range(generate_new_points_cnt):
+        new_point = gen_new_point(point)
+        if within_borders(new_point) and neighbor_check(new_point) == "No close neighbors":
+            process_list.append(new_point)
+            sample_points.append(new_point)
+            grid[new_point_grid_y][new_point_grid_x] = new_point
+
+     return sample_points
